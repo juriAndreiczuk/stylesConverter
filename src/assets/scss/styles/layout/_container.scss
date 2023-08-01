@@ -1,0 +1,5 @@
+.container {
+  @include desctop {
+    max-width: vw(1140);
+  }
+}
