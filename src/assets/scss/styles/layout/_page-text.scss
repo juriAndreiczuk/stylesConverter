@@ -1,6 +1,0 @@
-@mixin page-text($size: 18, $color: $text-color, $weight: $normal-font, $line: 1.5) {
-  @extend %font-#{$size};
-  color: $color;
-  line-height: $line;
-  font-family: $weight;
-}

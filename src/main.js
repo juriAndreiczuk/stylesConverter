@@ -1,5 +1,4 @@
-import 'bootstrap-4-grid/css/grid.min.css'
-
+import './assets/index.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
