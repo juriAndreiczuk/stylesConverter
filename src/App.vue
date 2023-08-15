@@ -1,6 +1,7 @@
 <script setup>
 import ProjectsList from './components/ProjectsList.vue'
 import ProjectInfo from './components/ProjectInfo.vue'
+import SectionStructure from './components/SectionStructure.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import ProjectInfo from './components/ProjectInfo.vue'
         </div>
         <section class="w-4/5">
           <ProjectInfo />
+          <SectionStructure />
         </section>
       </div>
     </div>
