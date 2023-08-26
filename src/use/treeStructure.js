@@ -1,12 +1,12 @@
 import { computed } from 'vue'
-import { useCodeStore } from '../stores/code'
+import { useStructureStore } from '../stores/structure'
 
 const useTreeStructure = () => {
-  const codeStore = useCodeStore()
+  const structureStore = useStructureStore()
   
   const getHtml = computed(() => {
     const htmlContainer = document.createElement('div')
-    htmlContainer.innerHTML = codeStore.codeValue
+    htmlContainer.innerHTML = structureStore.codeValue
     htmlContainer.classList.add('html')
     return htmlContainer
   })
@@ -17,10 +17,10 @@ const useTreeStructure = () => {
   })
 
   const getClassesTree = val => {
-    codeStore.setCodeValue(val)
-    codeStore.resetClasses()
+    structureStore.setCodeValue(val)
+    structureStore.resetClasses()
     const rootClass = processElement(getHtml.value)
-    codeStore.fillClasses(rootClass)
+    structureStore.fillClasses(rootClass)
   }
 
   return { getClassesTree }

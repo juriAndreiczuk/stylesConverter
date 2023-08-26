@@ -1,8 +1,8 @@
 <script setup>
-  import { useCodeStore } from './../../stores/code'
-  const codeStore = useCodeStore()
+  import { useStructureStore } from '../../stores/structure'
+  const structureStore = useStructureStore()
 
-  const getScssStructure = (elements = codeStore.classesTest, indent = ' ') => {
+  const getScssStructure = (elements, indent = ' ') => {
     let scss = ''
     if(elements && Array.isArray(elements.elements)) {
       scss += `${indent}.${elements.name} {\n`
@@ -20,7 +20,7 @@
       <button class="bg-cyan-900 px-3 text-1xl text-slate-100">copy</button>
     </div>
     <pre class="block overflow-auto h-72 w-full text-1xl py-3 px-5 border-2 text-slate-200 bg-slate-800 border-cyan-100"
-      >{{ getScssStructure() }}</pre
+      >{{ getScssStructure(structureStore.classesTree) }}</pre
     >
   </div>
 </template>

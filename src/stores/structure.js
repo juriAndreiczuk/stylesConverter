@@ -1,13 +1,13 @@
 import { reactive, computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCodeStore = defineStore('code', () => {
+export const useStructureStore = defineStore('structure', () => {
   const classes = reactive({})
   const codeValue = ref('')
   
   const setCodeValue = val => codeValue.value = val
 
-  const classesTest = computed(() => {
+  const classesTree = computed(() => {
     let result = []
     if(classes.html) {
       result = classes.html.elements = classes.html.elements[0][0]
@@ -27,6 +27,6 @@ export const useCodeStore = defineStore('code', () => {
   }
 
   return {
-    classes, resetClasses, fillClasses, classesTest, setCodeValue, codeValue
+    classes, resetClasses, fillClasses, classesTree, setCodeValue, codeValue
   }
 })
