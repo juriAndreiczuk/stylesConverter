@@ -1,7 +1,7 @@
 import { computed } from 'vue'
-import { useStructureStore } from '../stores/structure'
+import { useStructureStore } from './../../stores/structure'
 
-const useTreeStructure = () => {
+const useStructureTree = () => {
   const structureStore = useStructureStore()
   
   const getHtml = computed(() => {
@@ -26,4 +26,4 @@ const useTreeStructure = () => {
   return { getClassesTree }
 }
 
-export default useTreeStructure
+export default useStructureTree

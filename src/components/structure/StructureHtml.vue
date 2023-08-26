@@ -1,8 +1,8 @@
 <script setup>
-  import useTreeStructure from '../../use/treeStructure'
+  import useStructureTree from '../../use/structure/StructureTree'
   import useHandleTab from './../../use/handleTab'
 
-  const { getClassesTree } = useTreeStructure()
+  const { getClassesTree } = useStructureTree()
   const { textArea, codeValue, handleTab } = useHandleTab()
 </script>
 <template>
