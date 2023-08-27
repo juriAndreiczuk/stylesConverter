@@ -9,7 +9,14 @@ const useStructureScss = () => {
   const getScssStructure = (elements = structureStore.classesTree, indent = ' ') => {
     scss.value = ''
     if(elements && Array.isArray(elements.elements)) {
-      scss.value += `${indent}.${elements.name} {\n`
+      if (elements.name.includes('-') || elements.name.includes('__')) {
+        elements.name = elements.name.includes('-')
+        ? elements.name.slice(elements.name.indexOf('-')) 
+        : elements.name.slice(elements.name.indexOf('__'))
+      }
+
+      const separator = elements.name.includes('-') || elements.name.includes('__') ? '&' : '.'
+      scss.value += `${indent}${separator}${elements.name} {\n`
       scss.value += elements.elements.reduce((acc, val) => acc + getScssStructure(val, `${indent} `), '')
       scss.value += `${indent}}\n`
     }
