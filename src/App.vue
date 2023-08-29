@@ -1,6 +1,6 @@
 <script setup>
-import ProjectsList from './components/ProjectsList.vue'
-import ProjectInfo from './components/ProjectInfo.vue'
+import ProjectsList from './components/projects/ProjectsList.vue'
+import ProjectsInfo from './components/projects/ProjectsInfo.vue'
 import StructureSection from './components/structure/StructureSection.vue'
 import ConverterSection from './components/converter/ConverterSection.vue'
 </script>
@@ -13,7 +13,7 @@ import ConverterSection from './components/converter/ConverterSection.vue'
           <ProjectsList />
         </div>
         <section class="w-4/5">
-          <ProjectInfo />
+          <ProjectsInfo />
           <StructureSection />
           <ConverterSection />
         </section>

@@ -1,6 +1,6 @@
 <script setup>
-import { useProjectsStore } from './../stores/projects'
-import ProjectValues from './ProjectValues.vue'
+import { useProjectsStore } from '../../stores/projects'
+import ProjectsValues from './ProjectsValues.vue'
 
 const projectsStore = useProjectsStore()
 </script>
@@ -19,11 +19,11 @@ const projectsStore = useProjectsStore()
       <div class="w-2/3 pt-3 min-h-full">
         <h3 class="font-bold text-2xl text-slate-200">Project info:</h3>
         <div class="flex border-cyan-100">
-          <ProjectValues
+          <ProjectsValues
             :values-title="'Colors:'"
             :values-list="projectsStore.activeProjectInfo.colors"
           />
-          <ProjectValues
+          <ProjectsValues
             :values-title="'Fonts:'"
             :values-list="projectsStore.activeProjectInfo.fonts"
           />
