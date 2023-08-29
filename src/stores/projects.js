@@ -22,8 +22,8 @@ export const useProjectsStore = defineStore('projects', () => {
           value: 'Arial'
         },
         {
-          name: 'title-font',
-          value: 'Comic-sans'
+          name: '$title-font',
+          value: 'sans-serif'
         }
       ],
     },

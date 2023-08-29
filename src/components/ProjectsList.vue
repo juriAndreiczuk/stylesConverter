@@ -5,7 +5,7 @@ const projectsStore = useProjectsStore()
 </script>
 
 <template>
-  <aside class="bg-cyan-900 px-4 py-7 min-h-screen">
+  <aside class="bg-cyan-900 px-4 py-7 min-h-screen fixed w-[240px] z-10">
     <h2 class="font-bold pb-5 text-3xl text-stone-50">Projects:</h2>
     <ul>
       <li
