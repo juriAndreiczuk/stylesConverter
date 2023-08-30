@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
   <div>
     <div class="flex justify-between align-middle w-full relative pb-1">

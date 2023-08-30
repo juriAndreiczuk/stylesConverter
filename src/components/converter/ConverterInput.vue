@@ -1,6 +1,7 @@
 <script setup>
-  import useConverterDivide from './../../use/converter/converterDivide'
-  const {inputCode, convertToScss} = useConverterDivide()
+  import useCoverterInput from './../../use/converter/converterInput'
+
+  const { inputCode, convertToScss } = useCoverterInput()
 </script>
 
 <template>
@@ -17,7 +18,8 @@
         @click="convertToScss"
         class="bg-cyan-900 p-3 text-1xl text-slate-100 mt-3"
       >
-      Convert styles</button>
+        Convert styles
+      </button>
     </div>
   </div>
 </template>

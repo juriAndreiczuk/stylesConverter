@@ -1,19 +1,13 @@
-import { ref, computed } from 'vue'
-import { useProjectsStore } from '../../stores/projects'
+import { defineStore } from 'pinia'
+import { useProjectsStore } from './projects'
+import { computed, ref } from 'vue'
 
-const useConverterDivide = () => {
+export const useConverterStore = defineStore('converter', () => {
   const projectStore = useProjectsStore()
-  const inputCode = ref(``)
+  const inputVariables = ref([]);
 
-  const inputArray = computed(() => inputCode.value
-    .replace(/\n/g, '')
-    .split(';')
-    .map(str => str.trim())
-    .filter(str => str !== '')
-  )
-
-  const inputVariables = computed(() => inputArray.value
-    .map(str => {
+  const setInputVariables = val => {
+    inputVariables.value = val.map(str => {
       const strName = str.slice(0, str.indexOf(':')).trim()
       const strVal = str.slice(str.indexOf(':') + 1).trim()
       const { colors, fonts } = projectStore.activeProjectInfo
@@ -21,7 +15,7 @@ const useConverterDivide = () => {
       const index = values.findIndex(c => strVal === c.value)
       return index !== -1 ? `${strName}: ${values[index].name}` : `${strName}: ${strVal}`
     })
-  )
+  }
 
   const getValues = values => 
     inputVariables.value
@@ -31,7 +25,5 @@ const useConverterDivide = () => {
   const indentArray = computed(() => getValues(['padding', 'margin']))
   const sizeArray = computed(() => getValues(['width', 'height']))
 
-  return { inputCode, textArray, indentArray, sizeArray }
-}
-
-export default useConverterDivide
+  return { setInputVariables, textArray, indentArray, sizeArray }
+})
