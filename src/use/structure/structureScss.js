@@ -3,7 +3,6 @@ import { useStructureStore } from './../../stores/structure'
 
 const useStructureScss = () => {
   const structureStore = useStructureStore()
-  const copyButtonText = ref('copy')
   const scss = ref('')
 
   const getScssStructure = (elements = structureStore.classesTree, indent = ' ') => {
@@ -23,21 +22,13 @@ const useStructureScss = () => {
     return scss.value
   }
 
-  const copyStructure =  () => {
-    navigator.clipboard.writeText(scss.value)
-    copyButtonText.value = 'copied !'
-    setTimeout(() => {
-      copyButtonText.value = 'copy'
-    }, 2000)
-  }
-
   watch(
     () => structureStore.classesTree,
     val => { getScssStructure(val) },
     { deep: true }
   )
 
-  return { scss, copyButtonText, copyStructure }
+  return { scss }
 }
 
 export default useStructureScss
