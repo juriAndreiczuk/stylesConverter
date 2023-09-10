@@ -1,7 +1,8 @@
 <script setup>
-  import { ref } from 'vue'
   import AppCopyButton from './../app/AppCopyButton.vue'
-  const scss = ref('')
+  import useConverterOutput from './../../use/converter/converterOutput'
+
+  const { scss } = useConverterOutput()
 </script>
 
 <template>
@@ -14,6 +15,6 @@
     </div>
     <pre
       class="block overflow-auto h-72 w-full text-1xl py-3 px-5 border-2 text-slate-200 bg-slate-800 border-cyan-100"
-    ></pre>
+    >{{ scss }}</pre>
   </div>
 </template>
