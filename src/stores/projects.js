@@ -46,7 +46,7 @@ export const useProjectsStore = defineStore('projects', () => {
           value: 'sans-serif'
         },
         {
-          name: 'title-font',
+          name: '$title-font',
           value: 'serif'
         }
       ],
