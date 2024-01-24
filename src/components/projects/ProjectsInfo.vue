@@ -6,7 +6,7 @@ const projectsStore = useProjectsStore()
 </script>
 
 <template>
-  <div class="px-5 py-7">
+  <div class="px-5 py-7" v-if="projectsStore.projects.length">
     <header>
       <h2 class="font-bold text-2xl text-slate-200">
         Current project:

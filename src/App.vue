@@ -7,7 +7,6 @@ import LoginForm from './components/login/LoginForm.vue'
 import { useAutentification } from './use/autentification/autentification'
 import { useAuthStore } from './stores/auth'  
 const { logout } = useAutentification()
-
 const authStore = useAuthStore()
 
 </script>
